@@ -1,3 +1,11 @@
+/*
+* 21. How Many Pizzas?
+* Program to calculate the number of pizza's needed to feed a (input) amount of people
+*
+* Name:    Thor Kopenkoskey
+* Date:    1/31/2026
+*/
+
 #include <iostream>
 #include <iomanip>
 #include <cmath>
@@ -5,8 +13,8 @@ using namespace std;
 
 int main()
 {
-    const double PI = 3.14159;        // named constant for pi
-    const double SLICE_AREA = 14.125; // square inches per slice
+    const double PI = 3.14159;        
+    const double SLICE_AREA = 14.125;
     const int SLICES_PER_PERSON = 4;
 
     int people;
@@ -17,14 +25,12 @@ int main()
     int totalSlicesNeeded;
     int pizzasNeeded;
 
-    // Input
     cout << "Enter the number of people attending the party: ";
     cin >> people;
 
     cout << "Enter the diameter of the pizza (in inches): ";
     cin >> diameter;
 
-    // Calculations
     radius = diameter / 2.0;
     pizzaArea = PI * radius * radius;
     slicesPerPizza = pizzaArea / SLICE_AREA;
@@ -35,7 +41,6 @@ int main()
         ceil(totalSlicesNeeded / slicesPerPizza)
     );
 
-    // Output
     cout << fixed << setprecision(1);
     cout << "You need to purchase " << pizzasNeeded << " pizzas." << endl;
 

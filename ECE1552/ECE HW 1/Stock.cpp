@@ -1,23 +1,27 @@
+/*
+* 23. Stock Transaction Program
+* Program to calculate Stock price and commission
+*
+* Name:    Thor Kopenkoskey
+* Date:    1/30/2026
+*/
+
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    // Given data
     int shares = 1000;
     double buyPrice = 45.50;
     double sellPrice = 56.90;
     double commissionRate = 0.02;
 
-    // Purchase calculations
     double amountPaid = shares * buyPrice;
     double buyCommission = amountPaid * commissionRate;
 
-    // Sale calculations
     double amountSold = shares * sellPrice;
     double sellCommission = amountSold * commissionRate;
 
-    // Profit calculation
     double profit = amountSold - sellCommission - amountPaid - buyCommission;
 
     // Output

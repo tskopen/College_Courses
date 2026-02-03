@@ -1,10 +1,18 @@
+/* 
+* 20. Pizza Pi
+* Program to calculate the number of slices a pizza can be cut into.
+* 
+* Name:    Thor Kopenkoskey
+* Date:    1/30/2026
+*/
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
 int main()
 {
-    const double PI = 3.14159;      // named constant for pi
+    const double PI = 3.14159;   
     const double SLICE_AREA = 14.125;
 
     double diameter;

@@ -1,17 +1,24 @@
+/*
+* 22. Angle Calculator
+* Program to calculate the different trig function angles
+*
+* Name:    Thor Kopenkoskey
+* Date:    1/31/2026
+*/
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
 
 using namespace std;
 
-int main() {
+int main() 
+{
     double angle;
 
-    // Ask for input
     cout << "Enter an angle in radians: ";
     cin >> angle;
 
-    // Display results in fixed-point notation with 4 decimal places
     cout << fixed << setprecision(4);
     cout << "Sine:     " << sin(angle) << endl;
     cout << "Cosine:   " << cos(angle) << endl;
