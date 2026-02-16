@@ -1,0 +1,22 @@
+/* To use a pseudocode like this, first copy and paste it in
+   your editor in file PrintName.java then each time there is
+   a line starting with TODO, implement the described code in 
+   the empty line below the TODO line and after the implementation 
+   remove only the word "TODO:" from the comment leaving the rest 
+   of the comment as a documentation                            */
+
+import java.util.Scanner;
+
+class PrintName {
+  static public void main (String[] args) {
+    Scanner scanner = new tskopenScanner(System.in);
+
+    System.out.println("What is your name?");
+    
+    String userName;    
+
+    userName = tskopenScanner.next();
+
+    System.out.println("So, your name is: " + userName);
+  }
+}
