@@ -1,4 +1,4 @@
-x/** Sample Program with highlighting */
+/** Sample Program with highlighting */
 import java.util.Scanner;
 class Test {
    // Here we type our first method
