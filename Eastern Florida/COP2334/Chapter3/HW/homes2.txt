@@ -1,0 +1,9 @@
+123 Pine Lane
+179250
+2.5
+12 Birch Way
+235690
+2
+52 Oak Street
+100000
+1.5

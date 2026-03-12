@@ -1,0 +1,9 @@
+10 Main Street
+250000
+3.1
+15 Park Place
+199000
+2.5
+23 First Ave
+175699
+1
