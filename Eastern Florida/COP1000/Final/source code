@@ -1,0 +1,44 @@
+/*
+ * Program to take user's puzzle name, piece count, length, and width and apply it to a class for printout
+ *
+ * Name:    Thor Kopenkoskey
+ * Date:   April 20, 2025
+ */
+ 
+#include <string>
+#include <iostream>
+#include "Receipt.h"
+using namespace std;
+
+/*
+ * main - Take user input, upload to puzzle class, and print method
+ *
+ * Return: Output puzzle details
+ */
+  const int numItems = 5;
+int main(){
+    
+}
+class Puzzle
+{
+    private:
+        string descript;
+        int pieceNum;
+        double length;
+        double width;
+    
+    public:
+        string getDescript();
+        void setDescript(string descript);
+        
+        int getPieceNum();
+        void setPieceNum(int pieceNum);
+        
+        double getLength();
+        void setLength(double length);
+        
+        double getWidth();
+        void setWidth(double width);
+        
+        void print();
+};
