@@ -1,0 +1,16 @@
+class Grades
+{
+  public static void main(String[]a)
+  {
+    char[]grades = new char[20];
+    java.util.Random prng = new java.util.Random;
+    for (int = 0; i < grades.length; i ++)
+    {
+      grades[i] = (char) ('A' + prng.nextInt());
+    }
+    for (int i = 0; i < grades.length; i ++)
+    {
+      System.out.println(grades[i]);
+    }
+  }
+}
