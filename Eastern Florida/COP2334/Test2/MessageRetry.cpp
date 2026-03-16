@@ -24,8 +24,6 @@ const int SENTIAL = 3;
 
 int main()
 {
-	bool shouldcontinute = true;
-
 	int menuNum;
 	int messageNum;
 	string message;
