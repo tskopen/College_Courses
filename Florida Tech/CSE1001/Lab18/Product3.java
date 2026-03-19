@@ -8,10 +8,9 @@
 
  * @Date: March 19, 2025.
 
- * @Description: Find factors of multitudes
+ * @Description: Add and subtract to calculate value of multiplication.
 
  * **************************************************************************/
-import java.util.Scanner;
 import java.util.Scanner;
 
 class Product 
@@ -35,11 +34,21 @@ class Product
 
         int result = 0;
         
-        // TODO: In a for cycle with i from  1 to a 
-        for(int i = 1; i <= b; i++)
+      if (a > 0)
+      {
+        for (int i = 0; i <= a - 1; i++)
         {
-          result += a;
+          result += b;
         }
+      }
+
+      if (a < 0)
+      {
+        for (int i = 0; i >= a + 1; i--)
+        {
+          result -= b;
+        }
+      }
         System.out.println(a + " x " + b + " = " + result);
 
         System.out.print("Would you like to multiply? ");

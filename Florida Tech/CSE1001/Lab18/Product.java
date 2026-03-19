@@ -8,7 +8,7 @@
 
  * @Date: March 19, 2025.
 
- * @Description: Find factors of multitudes
+ * @Description: Add to calculate value of multiplication.
 
  * **************************************************************************/
 import java.util.Scanner;
