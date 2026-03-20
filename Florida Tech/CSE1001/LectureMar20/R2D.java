@@ -22,8 +22,16 @@ class D2D
         col_exists = false;
         for(int row = 0; row < a.length; row ++)
         {
-            System.out.print(" " + (col < a[row].length ? a[row][col] : " "));
-            if (a[row].length > col) col_exists = true;
+            //System.out.print(" " + (col < a[row].length ? a[row][col] : " "));
+            if (a[row].length > col) 
+            {
+                col_exists = true;
+                System.out.print(" " + a[row][col]);
+            }
+            else
+            {
+                System.out.println(); 
+            }
         }
 
     }
