@@ -4,7 +4,8 @@ class D2D
    {
     int a[][] =
         {{1, 2, 3},
-	 {4, 5, 6}};
+	       {4, 5, 6}};
+
     for(int row = 0; row < a.length; row ++)
     {
       for(int col = 0; col < a[row].length; col ++)
