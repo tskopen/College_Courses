@@ -12,9 +12,6 @@ using namespace std;
 
 const int MAX_NUM_OF_MAJORS = 5;
 
-string majorsInput[MAX_NUM_OF_MAJORS] = {};
-int quantityInput[MAX_NUM_OF_MAJORS] = {};
-
 int calcTotalPopulation(int quantityInput[]);
 int mostPopular(int quantityInput[]);
 
@@ -26,30 +23,31 @@ int mostPopular(int quantityInput[]);
 
 int main()
 {  
-  for (int i = 0; i < MAX_NUM_OF_MAJORS; i++)
-  {
-    cout << "Major Count? ";
-    cin >>  majorsInput[i] >> quantityInput[i];
+    string majorsInput[MAX_NUM_OF_MAJORS] = { };
+    int quantityInput[MAX_NUM_OF_MAJORS] = { };
+
+    for (int i = 0; i < MAX_NUM_OF_MAJORS; i++)
+    {
+        cout << "Major Count? ";
+        cin >>  majorsInput[i] >> quantityInput[i];
+        cout << endl;
+    }
+
+    int totalPopulation = calcTotalPopulation(quantityInput);
+
+    cout << left << setfill(' ') << setw(10) << "Major"  << setw(10) <<  "Enrolled" << "Percent" << endl;
+
+    for (int i = 0; i < MAX_NUM_OF_MAJORS; i++)
+    {
+        float percent = static_cast<float>(quantityInput[i]) / static_cast<float>(totalPopulation) * 100;
+        cout << left << setfill(' ') << setw(10) << majorsInput[i] << setw(10) << quantityInput[i] << fixed << setprecision(2) << percent << endl;
+    }
+
+    int popularIndex = mostPopular(quantityInput);
     cout << endl;
-  }
-
-  int totalPopulation = calcTotalPopulation(quantityInput);
-
-  cout << left << setfill(' ') << setw(10) << "Major"  << setw(10) <<  "Enrolled" << setw(10) << "Percent " << endl;
-
-  for (int i = 0; i < MAX_NUM_OF_MAJORS; i++)
-  {
-    float percent = static_cast<float>(quantityInput[i]) / static_cast<float>(totalPopulation) * 100;
-    cout << left << setfill(' ') << setw(10) << majorsInput[i] << setw(10) << quantityInput[i] << setw(10) << fixed << setprecision(2) << percent << endl;
-  }
-
-  int popularIndex = mostPopular(quantityInput);
-  cout << endl;
-  cout << "Total Enrolled: " << totalPopulation << endl;
-  cout << "Most Popular: " << majorsInput[popularIndex] << endl; 
-
-
-  return 0;
+    cout << "Total Enrolled: " << totalPopulation << endl;
+    cout << "Most Popular: " << majorsInput[popularIndex] << endl; 
+    return 0;
 }
 
 /*
@@ -61,12 +59,14 @@ int main()
 
 int calcTotalPopulation(int quantityInput[])
 {
-  int tmpPopulation = 0;
-  for (int i = 0; i < MAX_NUM_OF_MAJORS; i++)
-  {
-    tmpPopulation += quantityInput[i];
-  }
-  return tmpPopulation;
+    int tmpPopulation = 0;
+
+    for (int i = 0; i < MAX_NUM_OF_MAJORS; i++)
+    {
+        tmpPopulation += quantityInput[i];
+    }
+
+    return tmpPopulation;
 }
 
 /*
@@ -78,14 +78,15 @@ int calcTotalPopulation(int quantityInput[])
 
 int mostPopular(int quantityInput[])
 {
-  int tmpPopularIndex = 0;
-  for (int i = 0; i < MAX_NUM_OF_MAJORS; i++)
-  {
-    if(quantityInput[i] > quantityInput[tmpPopularIndex])
-    {
-      tmpPopularIndex = i;
-    }
-  }
+    int tmpPopularIndex = 0;
 
-  return tmpPopularIndex;
+    for (int i = 0; i < MAX_NUM_OF_MAJORS; i++)
+    {
+        if (quantityInput[i] > quantityInput[tmpPopularIndex])
+        {
+            tmpPopularIndex = i;
+        }
+    }
+
+    return tmpPopularIndex;
 }
