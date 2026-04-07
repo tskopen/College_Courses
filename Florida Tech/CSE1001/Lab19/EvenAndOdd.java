@@ -1,3 +1,17 @@
+/**************************************************************************
+
+ * @By: Thor Kopenkoskey
+
+ * @Lab: 19
+
+ * @CSE 1001 Fund Software, Fall 2025
+
+ * @Date: April 4
+
+ * @Description: Sort an array into EvenAndOdds
+
+ * **************************************************************************/
+
 public class EvenAndOdds {
  public static void main(String[] args) {
   int[] myArray = { 97, 9, 52, 56, 50, 57, 52, 83, 31, 11, 93, 63, 31, 72, 52, 86, 28, 97, 70, 29, 97, 100, 99,

@@ -1,5 +1,5 @@
 /*
- * Sort a series of scores into a list of 8 buckets going from 0 to 200 with a range of 25.
+ * Sort user data into a calendar matrix.
  *
  * Name:	Thor Kopenkoskey
  * Date:	March 18, 2026
@@ -9,7 +9,7 @@
 #include <iomanip>
 #include <string>
 using namespace std;
-
+ew
 const int NUM_DAYS = 7;
 const int NUM_HOURS = 10;
 
