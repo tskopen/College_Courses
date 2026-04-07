@@ -72,14 +72,15 @@ int main()
             }
         }
     }
+    
+    cout << setfill(' ') << right;
+
     for (int i = 0; i < NUM_ACTIVITIES; ++i) 
     {
-        cout << setw(12) << setfill(' ');
-        cout << right << activities[i];
+        cout << setw(12) << activities[i];
         for (int j = 0; j < NUM_WEEKS; ++j) 
         {
-            cout << setw(5) << setfill(' ');
-            cout << enrollments[i][j];
+            cout << setw(5) << enrollments[i][j];
         }
         cout << endl;
     }
