@@ -1,0 +1,5 @@
+3
+5_First_Ave 2005 380750
+10_Main_Street 1999 254000
+15_Park_Place 2020 315000
+
