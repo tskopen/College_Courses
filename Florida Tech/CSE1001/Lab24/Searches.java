@@ -12,7 +12,8 @@
 
  * **************************************************************************/
 import java.util.*;
-class Searches {
+class Searches 
+{
     // sequential search method, also found in class activities and above in instructions
     public static int sequentialSearch(int[]a, int x) 
         {
@@ -54,14 +55,13 @@ class Searches {
 
     }
 
-    public static void main(String[] args) 
+    public static void main (String[]args) 
     {
-        int n, m, x, y, resultIndex;
+        int n, m, x, y, resultIndex, k, foundSequential = 0, foundBinary = 0;
         // TODO: initialize scanner and random
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-
-        // TODO: prompt "Enter Array Length: " and read  n
+        // TODO: prompt "Enter Array Length: " and read n
         System.out.print("Enter Array Length: ");
         n = scanner.nextInt();
         // TODO prompt "Enter Upper Bound: " and read m
@@ -69,36 +69,59 @@ class Searches {
         m = scanner.nextInt();
         // TODO: allocate myArray with n elements of type int
         int[] myArray = new int[n];
-
         // TODO: in a for loop from i=0 to n, fill myArray[i] with random.nextInt(m)
         for(int i = 0; i < n - 1; i ++)
         {
             myArray[i] = random.nextInt(m);
         }
         // TODO: comment the following line out AFTER you debug
-        printArray(myArray); // useful for debugging
+        //printArray(myArray); // useful for debugging
 
-        // TODO: generate random values x and y, each of them with random.nextInt(m)
-        x = random.nextInt(m);
-        y = random.nextInt(m);
+        // TODO: prompt "Enter Number of Searches: " and read k
+        System.out.print("Enter Number of Searches: ");
+        k = scanner.nextInt();
+        System.out.println("===========================================");
+        System.out.println("Performing " + k +" Random Sequential Searches");
 
-
-        resultIndex = sequentialSearch(myArray, x);
-        // TODO if resultIndex is -1, print (x+" was not found by sequential search"), otherwise announce finding it with sequential search
-        if (resultIndex == -1)
+        long startSequential = System.nanoTime();
+        for(int i = 0; i < k; i++)
         {
-            System.out.println(x+" was not found by sequential search");
+            // TODO: generate random value x, random.nextInt(m)
+            x = random.nextInt(m);
+            resultIndex = sequentialSearch(myArray, x);
+            // TODO: if resultIndex is not -1 do foundSequential++
+            if (resultIndex != -1)
+            {
+                foundSequential++;
+            }
         }
+        long endSequential = System.nanoTime();
+        System.out.println("Sequential Search Running Time: " + (endSequential-startSequential) + "ns");
+        // TODO: print the report for sequential search found "Total Number of Successful Searches: "
+        System.out.println("Total Number of Successful Searches: " + foundSequential);
+
+        long startBinary = System.nanoTime();
         java.util.Arrays.sort(myArray);    // only a sorted array can be used with binary search
 
-        // TODO: commend the following line out AFTER you debug
-        printArray(myArray); // useful for debugging
-
-        resultIndex = binarySearch(myArray, y);
-        // TODO if resultIndex is -1 print (y+" was not found by binary search")), otherwise announce finding it with binary search
-        if (resultIndex == -1)
+        // TODO: comment the following line out AFTER you debug
+        //printArray(myArray); // useful for debugging
+        System.out.println("===========================================");
+        System.out.println("Performing " + k +" Random Sequential Searches");
+        for(int i = 0; i < k; i++)
         {
-            System.out.println(y+" was not found by binary search");
+            // TODO: generate random value y, random.nextInt(m)
+            y = random.nextInt(m);
+            resultIndex = binarySearch(myArray, y);
+            // TODO: if resultIndex is not do foundBinary++
+            if(resultIndex != -1)
+            {
+                foundBinary++;
+            }
         }
+        long endBinary = System.nanoTime();
+        System.out.println("Binary Search Running Time: " + (endBinary-startBinary) + "ns");
+        // TODO: print the report for binary search found "Total Number of Successful Searches: "
+        System.out.println("Total Number of Successful Searches: " + foundBinary);
+
     }
 }
