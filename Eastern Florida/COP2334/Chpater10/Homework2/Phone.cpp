@@ -12,7 +12,6 @@ int main()
 
 	int arrayIndex = 0;
 
-
 	cout << "Name? ";
 	cin >> tempName;
 	cout << endl;
@@ -33,7 +32,7 @@ int main()
 		arrayIndex++;
 	}
 
-	for(int i = 0; i < arrayIndex; i++)
+	for (int i = 0; i < arrayIndex; i++)
 	{
 		Contact[i].print();
 	}

@@ -1,10 +1,4 @@
-/*
- * Contact - header file
- * - defines template of Contact class
- *
- * Name: [Fill in your name]
- * Date: [Fill in the date]
- */
+
 #pragma once
 #include <string>
 #include <iostream>
