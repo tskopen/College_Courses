@@ -1,4 +1,17 @@
-#include "Contacts.h"
+/*
+ * Implementation for contact.h functions
+ *
+ * Name:	Thor Kopenkoskey
+ * Date:	April 24, 2026
+ */ 
+
+#include "Contact.h"
+
+/*
+ * Constructor to initalize empty values.
+ *
+ * Return:		N/A
+ */
 
 Contacts::Contacts()
 {
@@ -7,6 +20,15 @@ Contacts::Contacts()
     email = "";
 }
 
+/*
+ * Description of the method
+ *
+ * Parameter: 	string newName	    Name input
+ * Parameter: 	string newNumber	Number input
+ * Parameter: 	string newEmail	    Email input
+ * Return:		N/A
+ */
+
 Contacts::Contacts(string newName, string newNumber, string newEmail)
 {
     name = newName;
@@ -14,7 +36,22 @@ Contacts::Contacts(string newName, string newNumber, string newEmail)
     email = newEmail;
 }
 
-Contacts::~Contacts() {}
+/*
+ * Deconstructor, no allocated data that needs code, empty.
+ *
+ * Return:		N/A
+ */
+
+Contacts::~Contacts() 
+{
+
+}
+
+/*
+ * Function to print out Class objects with phone number formatting. 
+ *
+ * Return:		VOID
+ */
 
 void Contacts::print() const
 {

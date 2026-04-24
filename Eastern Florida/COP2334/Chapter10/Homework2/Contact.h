@@ -1,5 +1,12 @@
+/*
+ * Header file declaring the Contacts Anonymous object Constructor
+ *
+ * Name:	Thor Kopenkoskey
+ * Date:	April 24, 2026
+ */ 
 
 #pragma once
+
 #include <string>
 #include <iostream>
 
@@ -11,6 +18,7 @@ class Contacts
         string name;
         string number;
         string email;
+
     public:
         Contacts();
         Contacts(string newName, string newNumber, string newEmail);
