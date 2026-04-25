@@ -64,6 +64,7 @@ class Drawing {
 
     StdDraw.setPenColor(170, 170, 170);
     mountainOutlineX = new double[] {0, 0, 100, 150, 300};
+    
     mountainOutlineY = new double[] {0, 200, 100, 10, 2};
     StdDraw.filledPolygon​(mountainOutlineX, mountainOutlineY);
  }
