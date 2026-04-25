@@ -31,36 +31,19 @@ const uint8_t digitMap[10] = {
   0b00100000, //8
   0b00101000, //9
 };
-
+void setTimeFromCompile()
+{
+  // __TIME__ format: "HH:MM:SS"
+  hours   = (uint8_t)((__TIME__[0] - '0') * 10 + (__TIME__[1] - '0'));
+  minutes = (uint8_t)((__TIME__[3] - '0') * 10 + (__TIME__[4] - '0'));
+  seconds = (uint8_t)((__TIME__[6] - '0') * 10 + (__TIME__[7] - '0'));
+}
 void setup() 
 {
+  setTimeFromCompile();
   for (uint8_t i = 0; i < 10; i++) pinMode(segPins[i], OUTPUT);
   for (uint8_t i = 0; i < 4; i++) pinMode(digitPins[i], OUTPUT);
 
-  //debug upset
-/*
-  for (uint8_t i = 0; i < 4; i++) 
-  {
-    digitalWrite(digitPins[i], LOW);
-    for (uint8_t i = 0; i < 8; i++) 
-      {
-        digitalWrite(segPins[i], HIGH);
-      }
-  }
-  //cycle each segment
-  for (uint8_t i = 0; i < 4; i++) 
-  {
-    digitalWrite(digitPins[i], HIGH);
-    for (uint8_t i = 0; i < 8; i++) 
-      {
-        digitalWrite(segPins[i], LOW);
-        delay(100);
-        digitalWrite(segPins[i], HIGH);
-      }
-    digitalWrite(digitPins[i], LOW);
-  }
-*/
-  //cycle digits
   for (uint8_t d = 0; d < 4; d++) 
   {
     // enable one digit
@@ -69,7 +52,7 @@ void setup()
     for (uint8_t s = 0; s < 10; s++) 
     {
       showDigit(d, s, LOW);
-      delay(100);
+      delay(10);
     }
     // disable digit
     digitalWrite(digitPins[d], LOW);
@@ -99,11 +82,12 @@ void loop()
     minutes / 10,
     minutes % 10
   };
-
-  // multiplex display
+//Flip order for readability.
   for (uint8_t i = 0; i < 4; i++)
   {
-    showDigit(i, d[i], (i == 1 && seconds % 2 == 0)); // blink colon
+    uint8_t idx = 3 - i;
+
+    showDigit(i, d[idx], (i == 1 && seconds % 2 == 0)); // blink colon
     delay(refreshDelay);
     clearDigit(i);
   }
@@ -141,13 +125,13 @@ void clearDigit(uint8_t pos)
 
 void writeSeg(uint8_t pattern)
 {
-  digitalWrite(segPins[0], (pattern >> 3) & 1); // d → pin 6
-  digitalWrite(segPins[1], (pattern >> 4) & 1); // e → pin 7
-  digitalWrite(segPins[2], (pattern >> 5) & 1); // f → pin 8
-  digitalWrite(segPins[3], (pattern >> 6) & 1); // g → pin 9
+  digitalWrite(segPins[0], (pattern >> 3) & 1);
+  digitalWrite(segPins[1], (pattern >> 4) & 1);
+  digitalWrite(segPins[2], (pattern >> 5) & 1);
+  digitalWrite(segPins[3], (pattern >> 6) & 1); 
 
-  digitalWrite(segPins[4], (pattern >> 0) & 1); // a → pin 10
-  digitalWrite(segPins[5], (pattern >> 1) & 1); // b → pin 11
-  digitalWrite(segPins[6], (pattern >> 2) & 1); // c → pin 12
-  digitalWrite(segPins[7], (pattern >> 7) & 1); // dp → pin 13
+  digitalWrite(segPins[4], (pattern >> 0) & 1); 
+  digitalWrite(segPins[5], (pattern >> 1) & 1); 
+  digitalWrite(segPins[6], (pattern >> 2) & 1); 
+  digitalWrite(segPins[7], (pattern >> 7) & 1);
 }
