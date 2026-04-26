@@ -1,17 +1,37 @@
+/*
+ * Implementation file for Paycheck.cpp
+ *
+ * Name:	Thor Kopenkoskey
+ * Date:	April 26, 2026
+ */ 
+
 #include "Paycheck.h"
 
 using namespace std;
 
-//Note: This could be done, likely easier (Likely you meant it to be down and append end values), with a string. However I wanted to challenge-
-// myself and use a number which makes the check ID easier to expand upon later - what happens if checks go past the inital 4 start places?
 unsigned long Paycheck::checkNumber = 0000;
 
+/*
+ * Constructor of method with default values.
+ *
+ * Return:		N/A
+ */
 Paycheck::Paycheck()
 {
     name = "UNKNOWN";
     grossPay = -1;
     taxRate = -1;
 }
+
+/*
+ * Default constructor with input values.
+ *
+ * Parameter: 	string tempNameInput	    Name Input
+ * Parameter: 	double tempGrossPayInput	Grosspay Input
+ * Parameter: 	double tempTaxRateInput 	Tax Rate Input
+ *
+ * Return:		N/A
+ */
 Paycheck::Paycheck(string tempNameInput, double tempGrossPayInput, double tempTaxRateInput)
 {
     name = tempNameInput;
@@ -19,22 +39,42 @@ Paycheck::Paycheck(string tempNameInput, double tempGrossPayInput, double tempTa
     taxRate = tempTaxRateInput;
 }
 
+/*
+ * Description of the method
+ *
+ * Return:		desired checkNumber
+ */
 unsigned long Paycheck::getCheckNumber()
 {
     return checkNumber;
 }
 
+/*
+ * Description of the method
+ *
+ * Parameter: 	int startInput	Starting check number
+ * Return:		VOID
+ */
 void Paycheck::setCheckNumber(int startInput)
 {
     checkNumber = startInput;
 }
 
+/*
+ * calcuate the pay after taxes
+ *
+ * Return:		taxedGrossPay
+ */
 double Paycheck::calcuateTaxedPay()
 {
     return taxedGrossPay = (grossPay * (1 - (taxRate / 100)));
 }
 
-
+/*
+ * Print out class information.
+ *
+ * Return:		VOID
+ */
 void Paycheck::printInfo()
 {
     cout << "===========================" << endl;

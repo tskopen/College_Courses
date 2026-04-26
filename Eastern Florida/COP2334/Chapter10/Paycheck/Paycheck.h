@@ -1,3 +1,10 @@
+/*
+ * Header file for Paycheck.cpp
+ *
+ * Name:	Thor Kopenkoskey
+ * Date:	April 26, 2026
+ */ 
+
 #include <iostream>
 #include <string>
 #include <iomanip>
