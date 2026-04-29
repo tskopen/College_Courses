@@ -47,6 +47,7 @@ const uint8_t refreshDelay = 2;
 void setup() 
 {
   Serial.begin(9600);
+
   setTimeFromCompile();
   for (uint8_t i = 0; i < 8; i++) pinMode(segPins[i], OUTPUT);
   for (uint8_t i = 0; i < 4; i++) pinMode(digitPins[i], OUTPUT);
@@ -106,10 +107,11 @@ void loop()
     // Check alarm trigger
   if (!alarmRinging && alarmEnabled)
   {
-    if (hours == alarmHours && minutes == alarmMinutes && seconds == 0)
+    if (hours == alarmHours && minutes == alarmMinutes)
     {
       alarmRinging = true;
       Serial.println("ALARM TRIGGERED");
+      alarmEnabled = false;
     }
   }
 
@@ -158,6 +160,9 @@ void loop()
     analogWrite(ledPin, brightness);
     delay(5);
   }
+
+  analogWrite(ledPin, 0);
+
 }
 
 void tickSecond() 
